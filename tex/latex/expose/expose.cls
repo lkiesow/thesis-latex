@@ -35,6 +35,7 @@
 \usepackage{xspace}
 \usepackage{textcomp}
 \usepackage{tikz}
+\usetikzlibrary{shapes}
 
 \def\department#1{\gdef\@department{#1}}
 \def\@department{virtUOS}
