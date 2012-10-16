@@ -409,6 +409,6 @@
 \newcommand\emdash{{\hskip0pt}---{\hskip0pt}}
 
 
-\typeout{*************************************}
-\typeout{    Using expose class 2012-10-09}
-\typeout{*************************************}
+\typeout{*********************************************************************}
+\typeout{    Using expose class 2012-10-16 by Lars Kiesow <lkiesow@uos.de>}
+\typeout{*********************************************************************}
