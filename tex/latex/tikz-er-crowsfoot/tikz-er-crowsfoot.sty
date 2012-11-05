@@ -1,0 +1,144 @@
+% The tikz-er-crowsfoot package.
+% Mon Nov  5 2012 Lars Kiesow <lkiesow@uos.de>
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{tikz-er-crowsfoot}
+
+\RequirePackage{tikz}
+
+\usetikzlibrary{shapes.multipart}
+
+\newdimen\arrowsize
+
+%     --  |
+% ---|  |-|--
+%     --  |
+\pgfarrowsdeclare{crowsfoot01}{crowsfoot01}
+{
+	\arrowsize=0.2pt
+	\advance\arrowsize by .5\pgflinewidth
+	\pgfarrowsleftextend{-\pgflinewidth}
+	\pgfarrowsrightextend{24\arrowsize+.5\pgflinewidth}
+}
+{
+	\arrowsize=0.2pt
+	\advance\arrowsize by .5\pgflinewidth
+	\pgfsetdash{}{0pt} % do not dash
+	% draw 0
+	\pgfpathcircle{\pgfpoint{6\arrowsize}{0}}{6\arrowsize}
+	\pgfusepathqstroke
+	% draw 1
+	\pgfpathmoveto{\pgfpoint{17\arrowsize}{8\arrowsize}}
+	\pgfpathlineto{\pgfpoint{17\arrowsize}{-8\arrowsize}}
+	\pgfusepathqstroke
+	% draw horizontal line
+	\pgfpathmoveto{\pgfpoint{12\arrowsize}{0}}
+	\pgfpathlineto{\pgfpoint{24\arrowsize+.5\pgflinewidth}{0}}
+	\pgfusepathqstroke
+}
+
+
+%     --   /
+% ---|  |-<-
+%     --   \
+\pgfarrowsdeclare{crowsfoot0+}{crowsfoot0+}
+{
+	\arrowsize=0.2pt
+	\advance\arrowsize by .5\pgflinewidth
+	\pgfarrowsleftextend{-\pgflinewidth}
+	\pgfarrowsrightextend{26\arrowsize+.5\pgflinewidth}
+}
+{
+	\arrowsize=0.2pt
+	\advance\arrowsize by .5\pgflinewidth
+	\pgfsetdash{}{0pt} % do not dash
+	% draw 0
+	\pgfpathcircle{\pgfpoint{6\arrowsize}{0}}{6\arrowsize}
+	\pgfusepathqstroke
+	% draw <
+	\pgfpathmoveto{\pgfpoint{26\arrowsize}{8.5\arrowsize}}
+	\pgfpathlineto{\pgfpoint{16\arrowsize}{0}}
+	\pgfpathlineto{\pgfpoint{26\arrowsize}{-8.5\arrowsize}}
+	\pgfusepathqstroke
+	% draw horizontal line
+	\pgfpathmoveto{\pgfpoint{12\arrowsize}{0}}
+	\pgfpathlineto{\pgfpoint{26\arrowsize+.5\pgflinewidth}{0}}
+	\pgfusepathqstroke
+}
+
+%    |   /
+% ---|--<-
+%    |   \
+\pgfarrowsdeclare{crowsfoot1+}{crowsfoot1+}
+{
+	\arrowsize=0.2pt
+	\advance\arrowsize by .5\pgflinewidth
+	\pgfarrowsleftextend{-14\arrowsize-.5\pgflinewidth}
+	\pgfarrowsrightextend{0pt}
+}
+{
+	\arrowsize=0.2pt
+	\advance\arrowsize by .5\pgflinewidth
+	\pgfsetdash{}{0pt} % do not dash
+	% draw <
+	\pgfpathmoveto{\pgfpoint{-1\arrowsize}{8.5\arrowsize}}
+	\pgfpathlineto{\pgfpoint{-11\arrowsize}{0}}
+	\pgfpathlineto{\pgfpoint{-1\arrowsize}{-8.5\arrowsize}}
+	\pgfusepathqstroke
+	% draw 1
+	\pgfpathmoveto{\pgfpoint{-14\arrowsize}{8\arrowsize}}
+	\pgfpathlineto{\pgfpoint{-14\arrowsize}{-8\arrowsize}}
+	\pgfusepathqstroke
+}
+
+%    |  |
+% ---|--|--
+%    |  |
+\pgfarrowsdeclare{crowsfoot11}{crowsfoot11}
+{
+	\arrowsize=0.2pt
+	\advance\arrowsize by .5\pgflinewidth
+	\pgfarrowsleftextend{-14\arrowsize-.5\pgflinewidth}
+	\pgfarrowsrightextend{0pt}
+}
+{
+	\arrowsize=0.2pt
+	\advance\arrowsize by .5\pgflinewidth
+	\pgfsetdash{}{0pt} % do not dash
+	% draw right 1
+	\pgfpathmoveto{\pgfpoint{-8\arrowsize}{8\arrowsize}}
+	\pgfpathlineto{\pgfpoint{-8\arrowsize}{-8\arrowsize}}
+	\pgfusepathqstroke
+	% draw left 1
+	\pgfpathmoveto{\pgfpoint{-14\arrowsize}{8\arrowsize}}
+	\pgfpathlineto{\pgfpoint{-14\arrowsize}{-8\arrowsize}}
+	\pgfusepathqstroke
+}
+
+
+% Title (bold, centered)
+\newcommand{\entitytitle}[1]{\hfil\textbf{#1}}
+
+% Make shure \attrsep is defined
+\newcommand{\attrsep}{}
+
+% Attribute (some space on left side for marker which is the optional
+% attribute)
+\newcommand{\attr}[2][]%
+	{\attrsep\hspace{-.3em}\makebox[.8em]{#1}#2\def\attrsep{\\}}
+
+% Title/Attribute seperator
+\newcommand{\attributes}{\nodepart{second}\def\attrsep{}}
+
+% Entity without attributes
+\tikzstyle{entity*} = [
+	rounded corners, 
+	draw, 
+	inner sep=.5em, 
+	align=left]
+
+% Split entity (for attributes)
+\tikzstyle{entity} = [
+	entity*,
+	rectangle split, 
+	rectangle split parts=2]
