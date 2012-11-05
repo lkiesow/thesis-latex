@@ -35,6 +35,7 @@
 \usepackage{xspace}
 \usepackage{textcomp}
 \usepackage{tikz}
+\usepackage{uoscolor}
 \usetikzlibrary{shapes}
 
 \def\department#1{\gdef\@department{#1}}
@@ -46,32 +47,30 @@
 	\resizebox{0.7\textwidth}{!}{ \@logodata }
 }
 \def\@logodata{
-	\definecolor{ca60019}{RGB}{166,0,25}
-	\definecolor{cffffff}{RGB}{255,255,255}
 
 	\begin{tikzpicture}[y=0.80pt,x=0.80pt,yscale=-1, inner sep=0pt, outer sep=0pt]
 	\begin{scope}[cm={{1.25,0.0,0.0,-1.25,(0.0,127.5)}}]
-	  \path[draw=ca60019,line join=miter,line cap=butt,miter limit=4.00,line
+	  \path[draw=uos-red,line join=miter,line cap=butt,miter limit=4.00,line
 		 width=1.000pt] (196.4300,91.8355) .. controls (195.2380,91.8355) and
 		 (194.2730,92.7898) .. (194.2730,93.9688) .. controls (194.2730,95.1488) and
 		 (195.2380,96.1016) .. (196.4300,96.1016) .. controls (197.6170,96.1016) and
 		 (198.5820,95.1488) .. (198.5820,93.9688) .. controls (198.5820,92.7898) and
 		 (197.6170,91.8355) .. (196.4300,91.8355) -- cycle;
-	  \path[draw=ca60019,line join=miter,line cap=butt,miter limit=4.00,line
+	  \path[draw=uos-red,line join=miter,line cap=butt,miter limit=4.00,line
 		 width=1.542pt] (184.1990,34.7738) -- (184.1990,64.3207) -- (159.3120,51.3047)
 		 -- (159.3120,21.3516) -- (196.3440,1.9648) -- (233.3750,21.3516) --
 		 (233.3750,51.3047) -- (208.4840,64.3207) -- (208.4840,34.7738) --
 		 (196.3440,28.3355) -- (184.1990,34.7738) -- (184.1990,34.7738) -- cycle;
-	  \path[draw=ca60019,line join=miter,line cap=butt,miter limit=4.00,line
+	  \path[draw=uos-red,line join=miter,line cap=butt,miter limit=4.00,line
 		 width=1.542pt] (159.3090,93.4219) -- (159.3090,55.2266) -- (184.2070,68.3207)
 		 -- (184.2070,92.8988);
-	  \path[draw=ca60019,line join=miter,line cap=butt,miter limit=4.00,line
+	  \path[draw=uos-red,line join=miter,line cap=butt,miter limit=4.00,line
 		 width=1.542pt] (208.3710,92.9027) -- (233.4770,92.9027) -- (218.7070,100.8480)
 		 -- (173.7890,100.8480) -- (159.0700,92.9027) -- (184.1760,92.9027);
-	  \path[draw=ca60019,line join=miter,line cap=butt,miter limit=4.00,line
+	  \path[draw=uos-red,line join=miter,line cap=butt,miter limit=4.00,line
 		 width=1.542pt] (233.3830,93.4219) -- (233.3830,55.2266) -- (208.4840,68.2508)
 		 -- (208.4840,92.8988);
-	  \path[draw=ca60019,line join=miter,line cap=butt,miter limit=4.00,line
+	  \path[draw=uos-red,line join=miter,line cap=butt,miter limit=4.00,line
 		 width=1.542pt] (184.2070,92.8008) -- (184.2070,68.3438) -- (190.3630,71.5426)
 		 -- (190.3630,82.9219) .. controls (190.3630,86.1957) and (193.0430,88.8438) ..
 		 (196.3440,88.8438) .. controls (199.6480,88.8438) and (202.3280,86.1918) ..
@@ -208,7 +207,7 @@
 		 and (132.8360,49.5238) .. (132.0350,49.3246) .. controls (131.2850,49.1719)
 		 and (130.4340,49.4219) .. (130.2340,50.2227) .. controls (130.0350,51.0746)
 		 and (130.5860,51.8719) .. (131.3870,52.0238);
-	  \path[fill=cffffff,nonzero rule] (133.6370,44.6719) .. controls
+	  \path[fill=white,nonzero rule] (133.6370,44.6719) .. controls
 		 (134.7340,41.9727) and (135.4840,38.8719) .. (136.4340,35.9727) --
 		 (136.0860,35.7738) -- (130.7850,35.8719) -- (133.6370,44.6719);
 	  \path[fill=black,nonzero rule] (136.5860,52.0238) .. controls (137.4340,52.2227)
@@ -235,7 +234,7 @@
 		 and (249.8630,26.4219) .. (246.1130,26.7227) .. controls (242.7620,26.8246)
 		 and (239.5620,29.1719) .. (238.2110,32.2738) .. controls (236.6600,36.9219)
 		 and (236.9100,43.0746) .. (240.8120,46.5746);
-	  \path[fill=cffffff,nonzero rule] (243.7620,46.9219) .. controls
+	  \path[fill=white,nonzero rule] (243.7620,46.9219) .. controls
 		 (245.2620,48.0238) and (247.4610,48.1219) .. (249.2620,47.7227) .. controls
 		 (252.6130,46.9727) and (254.4100,43.3719) .. (254.8120,40.2738) .. controls
 		 (255.3120,36.3246) and (254.7110,32.5238) .. (252.2110,29.6719) .. controls
@@ -285,7 +284,7 @@
 		 (290.8090,28.0746) .. controls (291.0120,27.2227) and (292.6090,28.0238) ..
 		 (292.2620,26.9727) -- (288.1090,27.0746) .. controls (287.8590,27.9219) and
 		 (288.8590,27.2738) .. (289.1090,27.7738);
-	  \path[fill=cffffff,nonzero rule] (296.1090,44.5746) .. controls
+	  \path[fill=white,nonzero rule] (296.1090,44.5746) .. controls
 		 (297.1600,41.6719) and (298.1090,38.6719) .. (298.8090,35.6719) --
 		 (293.1600,35.7738) .. controls (294.1090,38.7227) and (295.0590,41.7738) ..
 		 (296.1090,44.5746);
@@ -300,7 +299,7 @@
 		 and (307.7620,28.9219) .. (307.8630,29.6719) -- (307.5120,46.0238) --
 		 (306.3630,46.7227) .. controls (308.9610,49.0238) and (313.2620,49.4219) ..
 		 (316.7620,48.5238);
-	  \path[fill=cffffff,nonzero rule] (309.7620,46.5746) .. controls
+	  \path[fill=white,nonzero rule] (309.7620,46.5746) .. controls
 		 (310.4100,47.7738) and (311.8120,48.0746) .. (313.1600,48.0746) .. controls
 		 (314.3120,48.0238) and (315.4100,47.8246) .. (316.3120,47.1719) .. controls
 		 (318.1130,45.7227) and (317.7110,43.2738) .. (317.1130,41.4219) .. controls
