@@ -381,11 +381,11 @@
 	\end{tikzpicture}
 }
 
-\newcommand{\uoslogoedge}{
+\newcommand{\uoslogoedge}[3]{
 	\ignorespaces%
 	\begin{tikzpicture}[remember picture, overlay]
 		\node [shift={(38.5mm,-12mm)}]  at (current page.north west)
-			{\uoslogofull{uos-yellow}{uos-red}{black}};
+			{\uoslogofull{#1}{#2}{#3}};
 	\end{tikzpicture}
 	\ignorespacesafterend%
 }
