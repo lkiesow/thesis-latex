@@ -170,6 +170,7 @@ ENTRY  % declare variables that have a value for each entry on the list
     series
     title
     type
+    url
     volume
     year
   }
@@ -691,6 +692,20 @@ FUNCTION {format.incoll.inproc.crossref}
   " \cite{" * crossref * "}" *
 }
 
+FUNCTION {format.url}
+{ url empty$
+   { "" }
+   { "\par {\small \url{" url * "}}" * }   %%   evtl. "URL" oder "<...>"
+   if$
+}
+
+FUNCTION {format.note}
+{ note empty$
+   { "" }
+   { "\begingroup\par\it Note:~" note * "\endgroup" * }   %%   evtl. "URL" oder "<...>"
+   if$
+}
+
 FUNCTION {article}
 {
   cite$ "TitlesOn" =
@@ -727,7 +742,8 @@ FUNCTION {article}
     }
   if$
   new.block   % 2009 jul 13: suppress notes
-  note output % 2009 jul 13: suppress notes
+  format.note output % 2009 jul 13: suppress notes
+  format.url output
   fin.entry
   }
   if$
@@ -771,7 +787,8 @@ FUNCTION {book}
   if$
 %  format.edition output % TDS original position of edition
   new.block
-  note output
+  format.note output
+  format.url output
   fin.entry
   #0 'docomma :=    % TURN COMMAS OFF
 }
@@ -787,7 +804,8 @@ FUNCTION {booklet}
   howpublished output
   address output
   new.block
-  note output
+  format.note output
+  format.url output
   fin.entry
 }
 
@@ -827,7 +845,8 @@ FUNCTION {inbook}
   if$
   format.edition output
   new.block
-  note output
+  format.note output
+  format.url output
   fin.entry
 }
 
@@ -854,7 +873,8 @@ FUNCTION {incollection}
     }
   if$
   new.block
-  note output
+  format.note output
+  format.url output
   fin.entry
 }
 
@@ -894,7 +914,8 @@ FUNCTION {inproceedings}
     }
   if$
   new.block
-  note output
+  format.note output
+  format.url output
   fin.entry
 }
 
@@ -912,7 +933,8 @@ FUNCTION {manual}
   address output
   format.edition output
   new.block
-  note output
+  format.note output
+  format.url output
   fin.entry
 }
 
@@ -928,7 +950,8 @@ FUNCTION {mastersthesis}
   school "school" output.check
   address output
   new.block
-  note output
+  format.note output
+  format.url output
   fin.entry
 }
 
@@ -942,7 +965,8 @@ FUNCTION {misc}
   new.block
   howpublished output
   new.block
-  note output
+  format.note output
+  format.url output
   fin.entry
 }
 
@@ -958,7 +982,8 @@ FUNCTION {phdthesis}
   school "school" output.check
   address output
   new.block
-  note output
+  format.note output
+  format.url output
   fin.entry
 }
 
@@ -976,7 +1001,8 @@ FUNCTION {proceedings}
   organization output				% a nonempty organization
   publisher output				% here
   new.block
-  note output
+  format.note output
+  format.url output
   fin.entry
 }
 
@@ -992,7 +1018,8 @@ FUNCTION {techreport}
   institution "institution" output.check
   address output
   new.block
-  note output
+  note  output
+  format.url output
   fin.entry
 }
 
@@ -1019,6 +1046,7 @@ FUNCTION {unpublished}
 
   new.block
   note "note" output.check
+  format.url output
   fin.entry
 
 % "===> GOlly done" warning$
