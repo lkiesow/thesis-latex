@@ -1,3 +1,3 @@
 #!/bin/bash
-cp -vr bibtex ~/.texmf/
-cp -vr tex    ~/.texmf/
+cp -vru bibtex ~/.texmf/
+cp -vru tex    ~/.texmf/
