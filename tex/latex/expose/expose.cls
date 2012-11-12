@@ -91,6 +91,7 @@
 % Correct spacing and breaks
 \newcommand\ie{i.e\@ifnextchar.{}{.\@\xspace}}
 \newcommand\etc{etc\@ifnextchar.{}{.\@\xspace}}
+\newcommand\eg{e.g\@ifnextchar.{}{.\@\xspace}}
 \newcommand\emdash{{\hskip0pt}---{\hskip0pt}}
 
 
