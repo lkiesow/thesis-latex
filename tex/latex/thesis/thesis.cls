@@ -36,6 +36,13 @@
 \usepackage{xspace}
 \usepackage{textcomp}
 
+% Set some colors:
+%  linkcolor: black (Should be obvious on what you can click)
+%  urlcolor: black (URLs are recognized anyway)
+%  citecolor: no change (I like the dark green)
+%  filecolor: no change (Not shure what this is exactly :-))
+\hypersetup{ colorlinks=true, linkcolor=black, urlcolor=black }
+
 \date{\the\year}
 \def\organization#1{\gdef\@organization{#1}}
 \def\@organization{}
