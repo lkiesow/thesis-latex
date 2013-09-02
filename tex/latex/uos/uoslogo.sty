@@ -383,20 +383,22 @@
 	\end{tikzpicture}
 }
 
-\newcommand{\uoslogotext}[2]{
+\newcommand{\uoslogotext}[2]{%
 	\begin{tikzpicture}[y=1pt, x=1pt]
 		\@uoslogotext{#1}{#2}
-	\end{tikzpicture}
+	\end{tikzpicture}%
 }
 
-\newcommand{\uoslogofull}[3]{
+\newcommand{\uoslogofull}[3]{%
+	\ignorespaces%
 	\begin{tikzpicture}[y=.8pt, x=.8pt, scale=.48273731]
 		\node[y=.8pt, x=.8pt, scale=.48273731, 
 			rectangle, fill=#1, 
 			minimum width=453, minimum height=141] 
 			at (196.4275,50.424) {};
 		\@uoslogotext{#2}{#3}
-	\end{tikzpicture}
+	\end{tikzpicture}%
+	\ignorespacesafterend%
 }
 
 \newcommand{\uoslogoedge}[3]{
@@ -404,7 +406,7 @@
 	\begin{tikzpicture}[remember picture, overlay]
 		\node [shift={(38.5mm,-12mm)}]  at (current page.north west)
 			{\uoslogofull{#1}{#2}{#3}};
-	\end{tikzpicture}
+	\end{tikzpicture}%
 	\ignorespacesafterend%
 }
 
