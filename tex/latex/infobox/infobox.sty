@@ -50,7 +50,7 @@
 % \signBox[TITLE]{SIGN,MESSAGE}
 %%
 \newcommand{\signBox}[3][]%
-{\noindent\ignorespaces%
+{\medskip\noindent\ignorespaces%
 \resizebox{2em}{!}{#2}%
 \raisebox{2em-\baselineskip}{
 \begin{minipage}[t]{\linewidth-4em}%
@@ -59,6 +59,7 @@
 	#3\par
 	\vspace{-.6\baselineskip} \hrulefill
 \end{minipage}}%
+\medskip%
 \par\noindent\ignorespacesafterend}
 
 %%%%
