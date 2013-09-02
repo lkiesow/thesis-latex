@@ -115,7 +115,7 @@
 		{\Large
 			\begin{tabular}[t]{c}%
 				\@author \\
-				{\large\tt \@email}
+				{\large \@email}
 			\end{tabular}\par}%
 		\vskip 1.5em%
 		{\large \@city, \@date \par}%       % Set date in \large size.
@@ -131,6 +131,23 @@
 	\end{titlepage}%
 	\setcounter{footnote}{0}%
 	\restoregeometry
+}
+
+%Define proclamation page for thesis
+\newcommand{\proclamationpage}{
+	\vspace*{\stretch{2}}
+	\hfil{\bf Proclamation}
+	\begin{quote}
+		Hereby I confirm that I wrote this thesis independently and
+		that I have not made use of any other resources or means than
+		those indicated.
+	  
+	  \vskip3em
+		\hfill\begin{tabular}{p{4cm}}\toprule
+			\hfil \@author
+		\end{tabular}
+	\end{quote}
+	\vspace*{\stretch{1}}
 }
 
 % Correct spacing and breaks
