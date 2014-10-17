@@ -1,3 +1,4 @@
 #!/bin/bash
-cp -vru bibtex ~/.texmf/
-cp -vru tex    ~/.texmf/
+TEXMFHOME=`kpsewhich -var-value TEXMFHOME`
+cp -vru bibtex $TEXMFHOME
+cp -vru tex    $TEXMFHOME
